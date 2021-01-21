@@ -7,7 +7,7 @@ from . import network
 
 class CNNSentenceEncoder(nn.Module):
 
-    def __init__(self, word_vec_mat, max_length, word_embedding_dim=50, pos_embedding_dim=5, hidden_size=230):
+    def __init__(self, word_vec_mat, max_length, word_embedding_dim=50, pos_embedding_dim=5, hidden_size=300):
         nn.Module.__init__(self)
         self.hidden_size = hidden_size
         self.max_length = max_length
@@ -21,7 +21,7 @@ class CNNSentenceEncoder(nn.Module):
 
 class PCNNSentenceEncoder(nn.Module):
 
-    def __init__(self, word_vec_mat, max_length, word_embedding_dim=50, pos_embedding_dim=5, hidden_size=230):
+    def __init__(self, word_vec_mat, max_length, word_embedding_dim=50, pos_embedding_dim=5, hidden_size=300):
         nn.Module.__init__(self)
         self.hidden_size = hidden_size
         self.max_length = max_length

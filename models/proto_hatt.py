@@ -8,7 +8,7 @@ from torch.nn import functional as F
 
 class ProtoHATT(fewshot_re_kit.framework.FewShotREModel):
     
-    def __init__(self, sentence_encoder, shots, hidden_size=230):
+    def __init__(self, sentence_encoder, shots, hidden_size=300):
         fewshot_re_kit.framework.FewShotREModel.__init__(self, sentence_encoder)
         self.hidden_size = hidden_size
         self.drop = nn.Dropout()
