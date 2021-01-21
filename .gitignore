@@ -14,7 +14,7 @@ sbatch*
 _processed_data
 data/test.json
 data/glove.6B.50d.json
-data/glove.6B.300d.json
+data/glove.6B.50d.json
 data/
 
 # virtualenv

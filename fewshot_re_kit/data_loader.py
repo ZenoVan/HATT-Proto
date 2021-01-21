@@ -104,7 +104,7 @@ class JSONFileDataLoader(FileDataLoader):
             self.ori_data = json.load(open(self.file_name, "r"))
             print("Finish loading")
             print("Loading word vector file...")
-            self.ori_word_vec = json.load(open(self.word_vec_file_name, "r"))
+            self.ori_word_vec = json.load(open(self.word_vec_file_name, "r", encoding='utf-8'))
             print("Finish loading")
             
             # Eliminate case sensitive
