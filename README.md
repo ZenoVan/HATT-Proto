@@ -8,7 +8,7 @@ Author: Tianyu Gao*, Xu Han*, Zhiyuan Liu, Maosong Sun. (\* means equal contribu
 
 We evaluate our models on [FewRel](https://thunlp.github.io/fewrel), a large-scale dataset for few-shot relation classification. It has 100 relations and 700 instances for each relation. You can find some baseline models from [here](https://github.com/thunlp/fewrel).
 
-Due to the large size, we did not upload the glove file (pre-trained word embedding). Please download `glove.6B.50d.json` from [Tsinghua Cloud](https://cloud.tsinghua.edu.cn/f/b14bf0d3c9e04ead9c0a/?dl=1) or [Google Drive](https://drive.google.com/open?id=1UnncRYzDpezPkwIqhgkVW6BacIqz6EaB) and put it under `data/` folder.
+Due to the large size, we did not upload the glove file (pre-trained word embedding). Please download `glove.6B.300d.json` from [Tsinghua Cloud](https://cloud.tsinghua.edu.cn/f/b14bf0d3c9e04ead9c0a/?dl=1) or [Google Drive](https://drive.google.com/open?id=1UnncRYzDpezPkwIqhgkVW6BacIqz6EaB) and put it under `data/` folder.
 
 ## Usage
 

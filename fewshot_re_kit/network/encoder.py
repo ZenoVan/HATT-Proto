@@ -6,7 +6,7 @@ import math
 from torch import optim
 
 class Encoder(nn.Module):
-    def __init__(self, max_length, word_embedding_dim=50, pos_embedding_dim=5, hidden_size=230):
+    def __init__(self, max_length, word_embedding_dim=300, pos_embedding_dim=5, hidden_size=230):
         nn.Module.__init__(self)
 
         self.max_length = max_length

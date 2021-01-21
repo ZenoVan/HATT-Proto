@@ -1,5 +1,5 @@
 import os
-import sklearn.metrics
+# import sklearn.metrics
 import numpy as np
 import sys
 import time

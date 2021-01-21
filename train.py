@@ -23,20 +23,35 @@ if len(sys.argv) > 4:
 print("{}-way-{}-shot Few-Shot Relation Classification".format(N, K))
 print("Model: {}".format(model_name))
 
-max_length = 40
-train_data_loader = JSONFileDataLoader('./data/train.json', './data/glove.6B.50d.json', max_length=max_length)
-val_data_loader = JSONFileDataLoader('./data/val.json', './data/glove.6B.50d.json', max_length=max_length)
-test_data_loader = JSONFileDataLoader('./data/test.json', './data/glove.6B.50d.json', max_length=max_length)
+max_length = 500
+# train_data_loader = JSONFileDataLoader('./data/train.json', './data/glove.6B.300d.json', max_length=max_length)
+# train_data_loader = JSONFileDataLoader('./data/train-news.json', './data/glove.6B.300d.json', max_length=max_length)
+train_data_loader = JSONFileDataLoader('./data/train-amazon.json', './data/glove.6B.300d.json', max_length=max_length)
+# train_data_loader = JSONFileDataLoader('./data/train-huffpost.json', './data/glove.6B.300d.json', max_length=max_length)
+# train_data_loader = JSONFileDataLoader('./data/train-reuters.json', './data/glove.6B.300d.json', max_length=max_length)
+
+# val_data_loader = JSONFileDataLoader('./data/val.json', './data/glove.6B.300d.json', max_length=max_length)
+# val_data_loader = JSONFileDataLoader('./data/val-news.json', './data/glove.6B.300d.json', max_length=max_length)
+val_data_loader = JSONFileDataLoader('./data/val-amazon.json', './data/glove.6B.300d.json', max_length=max_length)
+# val_data_loader = JSONFileDataLoader('./data/val-huffpost.json', './data/glove.6B.300d.json', max_length=max_length)
+# val_data_loader = JSONFileDataLoader('./data/val-reuters.json', './data/glove.6B.300d.json', max_length=max_length)
+
+# test_data_loader = JSONFileDataLoader('./data/val.json', './data/glove.6B.300d.json', max_length=max_length)
+# test_data_loader = JSONFileDataLoader('./data/val-news.json', './data/glove.6B.300d.json', max_length=max_length)
+test_data_loader = JSONFileDataLoader('./data/val-amazon.json', './data/glove.6B.300d.json', max_length=max_length)
+# test_data_loader = JSONFileDataLoader('./data/val-huffpost.json', './data/glove.6B.300d.json', max_length=max_length)
+# test_data_loader = JSONFileDataLoader('./data/val-reuters.json', './data/glove.6B.300d.json', max_length=max_length)
+
 
 framework = FewShotREFramework(train_data_loader, val_data_loader, test_data_loader)
 sentence_encoder = CNNSentenceEncoder(train_data_loader.word_vec_mat, max_length)
 
 if model_name == 'proto':
     model = Proto(sentence_encoder)
-    framework.train(model, model_name, 4, 20, N, K, 5, noise_rate=noise_rate)
+    framework.train(model, model_name, 4, 5, N, K, 5, noise_rate=noise_rate)
 elif model_name == 'proto_hatt':
     model = ProtoHATT(sentence_encoder, K)
-    framework.train(model, model_name, 4, 20, N, K, 5, lr_step_size=5000, train_iter=15000, noise_rate=noise_rate)
+    framework.train(model, model_name, 4, 5, N, K, 5, lr_step_size=5000, train_iter=15000, noise_rate=noise_rate)
 else:
     raise NotImplementedError
 

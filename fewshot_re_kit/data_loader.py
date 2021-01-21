@@ -208,6 +208,8 @@ class JSONFileDataLoader(FileDataLoader):
             print("Finish storing")
 
     def next_one(self, N, K, Q, noise_rate=0):
+        # print(self.rel2scope.keys())
+        # print(N)
         target_classes = random.sample(self.rel2scope.keys(), N)
         noise_classes = []
         for class_name in self.rel2scope.keys():

@@ -6,7 +6,7 @@ import math
 
 class Embedding(nn.Module):
 
-    def __init__(self, word_vec_mat, max_length, word_embedding_dim=50, pos_embedding_dim=5):
+    def __init__(self, word_vec_mat, max_length, word_embedding_dim=300, pos_embedding_dim=5):
         nn.Module.__init__(self)
 
         self.max_length = max_length

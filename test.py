@@ -23,9 +23,9 @@ print("{}-way-{}-shot Few-Shot Relation Classification".format(N, K))
 print("Model: {}".format(model_name))
 
 max_length = 40
-train_data_loader = JSONFileDataLoader('./data/train.json', './data/glove.6B.50d.json', max_length=max_length)
-val_data_loader = JSONFileDataLoader('./data/val.json', './data/glove.6B.50d.json', max_length=max_length)
-test_data_loader = JSONFileDataLoader('./data/test.json', './data/glove.6B.50d.json', max_length=max_length)
+train_data_loader = JSONFileDataLoader('./data/train.json', './data/glove.6B.300d.json', max_length=max_length)
+val_data_loader = JSONFileDataLoader('./data/val.json', './data/glove.6B.300d.json', max_length=max_length)
+test_data_loader = JSONFileDataLoader('./data/test.json', './data/glove.6B.300d.json', max_length=max_length)
 
 framework = FewShotREFramework(train_data_loader, val_data_loader, test_data_loader)
 sentence_encoder = CNNSentenceEncoder(train_data_loader.word_vec_mat, max_length)
