@@ -23,7 +23,7 @@ if len(sys.argv) > 4:
 print("{}-way-{}-shot Few-Shot Relation Classification".format(N, K))
 print("Model: {}".format(model_name))
 
-max_length = 500
+max_length = 340
 # train_data_loader = JSONFileDataLoader('./data/train.json', './data/glove.6B.300d.json', max_length=max_length)
 # train_data_loader = JSONFileDataLoader('./data/train-news.json', './data/glove.6B.300d.json', max_length=max_length)
 train_data_loader = JSONFileDataLoader('./data/train-amazon.json', './data/glove.6B.300d.json', max_length=max_length)

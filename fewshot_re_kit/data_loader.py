@@ -56,7 +56,7 @@ class JSONFileDataLoader(FileDataLoader):
         print("Finish loading")
         return True
 
-    def __init__(self, file_name, word_vec_file_name, max_length=40, case_sensitive=False, reprocess=False, cuda=True):
+    def __init__(self, file_name, word_vec_file_name, max_length=340, case_sensitive=False, reprocess=False, cuda=True):
         '''
         file_name: Json file storing the data in the following format
             {
